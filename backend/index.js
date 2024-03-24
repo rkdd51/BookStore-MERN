@@ -1,7 +1,8 @@
 import express, { request, response } from "express"
 import { PORT, mongoURL } from "./config.js";
 import mongoose from 'mongoose';
-import bookRoute from './models/bookModel.js';
+// import { Books } from './models/bookModel.js';
+import booksRoute from './routes/booksRoute.js'
 import cors from 'cors';
 
 const app = express();
@@ -12,7 +13,7 @@ app.use(cors());
 //Middleware for parsing request body
 app.use(express.json());
 
-app.use('/books',bookRoute)
+app.use("/books", booksRoute);
 
 
 app.get('/', (request,response) => {

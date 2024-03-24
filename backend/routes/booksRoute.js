@@ -1,6 +1,5 @@
-import express, { Route } from 'express';
-import { Book } from '../models/bookModel.js';
-
+import express, { Route } from "express";
+import { Book } from "../models/bookModel.js";
 
 const router = express.Router();
 //Route to Save a new book - Post Request
@@ -103,6 +102,5 @@ router.delete("/:id", async (request, response) => {
     return response.status(500).send({ message: err.message });
   }
 });
-
 
 export default router;
